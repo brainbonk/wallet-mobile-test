@@ -5,6 +5,7 @@
   "dependencies": {
     "@reown/appkit": "^1.6.4",
     "@reown/appkit-adapter-ethers": "^1.6.4",
+    "@telegram-apps/sdk": "^3.11.4",
     "cra-template": "1.2.0",
     "crypto-js": "^4.2.0",
     "env-cmd": "^10.1.0",
