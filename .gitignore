@@ -1,0 +1,11 @@
+# directories
+**/node_modules
+**/.DS_Store
+**/cache
+**/types
+**/DS_Store
+**/*.local
+
+# files
+*.log
+.pnp.*
