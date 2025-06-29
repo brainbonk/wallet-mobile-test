@@ -44,6 +44,8 @@ function Panel() {
 
   //Event Listeners
   useEffect(() => {
+    sessionStorage.setItem("@appkit/connection_status", "connected");
+
     if (!unSigner.contract) return;
 
     const listenerAdminSet = (account, state) => {
@@ -71,6 +73,7 @@ function Panel() {
     unSigner.contract?.on("CardsAdded", listenerCardsAdded);
     unSigner.contract?.on("CardsUpdated", listenerCardsUpdated);
     return () => {
+      sessionStorage.setItem("@appkit/connection_status", "disconnected");
       unSigner.contract?.off("AdminSet", listenerAdminSet);
       unSigner.contract?.off("HostSet", listenerHostSet);
       unSigner.contract?.off("CardsAdded", listenerCardsAdded);
@@ -105,6 +108,10 @@ function Panel() {
               }}
             >
               Cards Count: {contractCards.length}
+            </div>
+            <div>
+              <p>localStorage (connection_status): {localStorage.getItem("@appkit/connection_status") || "No connection_status"}</p>
+              <p>sessionStorage (connection_status): {sessionStorage.getItem("@appkit/connection_status") || "No connection_status"}</p>
             </div>
           </div>
         </>
