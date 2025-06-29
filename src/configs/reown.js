@@ -1,4 +1,4 @@
-import { bscTestnet, arbitrumSepolia } from "@reown/appkit/networks";
+import { mainnet, bscTestnet, arbitrumSepolia } from "@reown/appkit/networks";
 import { EthersAdapter } from "@reown/appkit-adapter-ethers";
 
 // Get projectId from https://cloud.reown.com
@@ -55,7 +55,7 @@ const reBscTestnet = {
 };
 
 // for custom networks visit -> https://docs.reown.com/appkit/react/core/custom-networks
-export const networks = [reArbitrumSepolia, reBscTestnet];
+export const networks = [mainnet, reArbitrumSepolia, reBscTestnet];
 
 // Set up Solana Adapter
 export const ethersAdapter = new EthersAdapter();
