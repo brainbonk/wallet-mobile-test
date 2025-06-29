@@ -33,7 +33,7 @@ function Panel() {
   };
 
   useEffect(() => {
-    if (typeof window.ethereum !== "undefined" && signer.contract) {
+    if (signer.contract) {
       try {
         contractGetCards();
       } catch (error) {
