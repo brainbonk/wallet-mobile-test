@@ -156,28 +156,37 @@ export const WalletContextProvider = ({ children }) => {
 
   const _loadWallet = useCallback(async () => {
     if (typeof window.ethereum === "undefined") return;
-    if (!isConnected) connectContract(networks[1]); //default network
-    if (chainId) {
+    // if (!isConnected) connectContract(networks[1]); //default network
+    // if (chainId) {
+    //   const _currentChain = networks.find((chain) => chain.id === chainId);
+    //   if (_currentChain) {
+    //     setSigner(initialSigner);
+    //     setUnSigner(initialUnSigner);
+    //     setWallet(disconnectedState);
+    //     setCurrentChain(_currentChain);
+    //     if (_currentChain.id !== 1) {
+    //       connectContract(_currentChain);
+    //     } else {
+    //       if (isConnected && address) {
+    //         setWallet({
+    //           accounts: [address.toLowerCase()],
+    //           isConnected,
+    //           chainId,
+    //         });
+    //       }
+    //     }
+    //   } else {
+    //     open({ view: "Networks" });
+    //   }
+    // }
+    if (isConnected && address && chainId) {
       const _currentChain = networks.find((chain) => chain.id === chainId);
-      if (_currentChain) {
-        setSigner(initialSigner);
-        setUnSigner(initialUnSigner);
-        setWallet(disconnectedState);
-        setCurrentChain(_currentChain);
-        if (_currentChain.id !== 1) {
-          connectContract(_currentChain);
-        } else {
-          if (isConnected && address) {
-            setWallet({
-              accounts: [address.toLowerCase()],
-              isConnected,
-              chainId,
-            });
-          }
-        }
-      } else {
-        open({ view: "Networks" });
-      }
+      setCurrentChain(_currentChain);
+      setWallet({
+        accounts: [address.toLowerCase()],
+        isConnected,
+        chainId,
+      });
     }
   }, [isConnected, address, chainId]);
 

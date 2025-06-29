@@ -99,6 +99,9 @@ function Panel() {
           <p>chainId: {chainId}</p>
           <p>address: {address}</p>
           <p>wallet: {JSON.stringify(wallet)}</p>
+          <p>wallet.accounts: {JSON.stringify(wallet?.accounts)}</p>
+          <p>wallet.isConnected: {JSON.stringify(wallet?.isConnected)}</p>
+          <p>wallet.chainId: {wallet?.chainId}</p>
           <h1 style={{ color: "yellow" }}>Wallet Mobile Test</h1>
           <div style={{ marginBottom: "20px" }}>
             <UserProfile />
