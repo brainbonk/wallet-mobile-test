@@ -155,7 +155,7 @@ export const WalletContextProvider = ({ children }) => {
   };
 
   const _loadWallet = useCallback(async () => {
-    if (typeof window.ethereum === "undefined") return;
+    // if (typeof window.ethereum === "undefined") return;
     // if (!isConnected) connectContract(networks[1]); //default network
     // if (chainId) {
     //   const _currentChain = networks.find((chain) => chain.id === chainId);
