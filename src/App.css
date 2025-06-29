@@ -22,3 +22,7 @@ h1 {
   cursor: pointer;
   display: block;
 }
+p {
+  font-size: 1rem;
+  color: white;
+}
